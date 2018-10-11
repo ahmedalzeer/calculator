@@ -1,0 +1,118 @@
+<!--Simple but Cool Calulator made with html ,css, javascript made by Ahmed Alzeer!-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>CALCULATOR</title>
+<script>
+function insert(data){
+document.getElementById("myText").value = document.getElementById("myText").value+data;
+}
+function clearText(){
+document.getElementById("myText").value="";
+}
+function equal(){
+var sum = document.getElementById("myText").value;
+if(sum){
+document.getElementById("myText").value=eval(sum);
+}
+}
+function back(){
+var sum = document.getElementById("myText").value;
+document.getElementById("myText").value=sum.substring(0,sum.length-1);
+}
+
+</script>
+<style type="text/css">
+
+.container
+{
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+background-color: aliceblue;
+border-top-right-radius: 10%;
+border-top-left-radius: 10%;
+}
+input[type="text"]{
+color: blue;
+}
+input[type="button"]{
+width: 40px;
+height: 40px;
+cursor: pointer;
+background: #5cd08d;
+border:none;
+font-size: 15px;
+text-align: center;
+z-index: 99;
+}
+.textview
+{
+width: 170px;
+height: 30px;
+padding: 10px;
+box-sizing: border-box;
+border:none;
+outline: 1px solid orange;
+margin-left: 3px;
+}
+h2{
+text-align: center;
+font-size: 30px;
+text-shadow: 0px 45px 1px orange;
+opacity: .8;
+margin:0;
+z-index: -999999;
+}
+h2:after{
+content: "Made by Ahmed Alzeer";
+display: block;
+font-size: 10px;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+<h2></h2>
+<form>
+<input type ="text" id="myText" value="" class="textview">
+</form>
+<table>
+<tr>
+<td><input value="C" type="button" onclick="clearText()"></input></td>
+<td><input value=">"type="button" onclick="back()"></input></td>
+<td><input value="/"type="button" onclick="insert(this.value)"></input></td>
+<td><input value="*"type="button" onclick="insert(this.value)"></input></td>
+</tr>
+<tr>
+<td><input value="7"type="button" onclick="insert(this.value)"></input></td>
+<td><input value="8"type="button" onclick="insert(this.value)"></input></td>
+<td><input value="9"type="button" onclick="insert(this.value)"></input></td>
+<td><input value="-"type="button" onclick="insert(this.value)"></input></td>
+
+</tr>
+<tr>
+<td><input value="4"type="button" onclick="insert(this.value)"></input></td>
+<td><input value="5"type="button" onclick="insert(this.value)"></input></td>
+<td><input value="6"type="button" onclick="insert(this.value)"></input></td>
+<td><input value="+"type="button" onclick="insert(this.value)"></input></td>
+
+</tr>
+<tr>
+<td><input value="1"type="button" onclick="insert(this.value)"></input></td>
+<td><input value="2"type="button" onclick="insert(this.value)"></input></td>
+<td><input value="3"type="button" onclick="insert(this.value)"></input></td>
+<td rowspan="2"><input style="height: 85px" value="="type="button" onclick="equal()"></input></td>
+
+</tr>
+<tr>
+<td colspan="2"><input style="width:85px" value="0"type="button" onclick="insert(this.value)"></input></td>
+<td colspan="0" width="20px"><input value="."type="button" onclick="insert(this.value)"></input></td>
+</tr>
+</table>
+</div>
+</body>
+</html>
+<!--Simple but Cool Calulator made with html ,css, javascript made by Ahmed Alzeer!-->
